@@ -29,98 +29,100 @@
         private void InitializeComponent()
         {
             this.VerbindungenLabel = new System.Windows.Forms.Label();
-            this.abfahrtLabel = new System.Windows.Forms.Label();
-            this.ankunftLabel = new System.Windows.Forms.Label();
+            this.dauerListBox = new System.Windows.Forms.ListBox();
+            this.zeitspannenListBox = new System.Windows.Forms.ListBox();
+            this.zeitspannenLabel = new System.Windows.Forms.Label();
             this.dauerLabel = new System.Windows.Forms.Label();
-            this.abfahrtTextBox = new System.Windows.Forms.TextBox();
-            this.ankunftTextBox = new System.Windows.Forms.TextBox();
-            this.dauerTextBox = new System.Windows.Forms.TextBox();
-            this.verbindungListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nummerListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // VerbindungenLabel
             // 
             this.VerbindungenLabel.AutoSize = true;
-            this.VerbindungenLabel.Location = new System.Drawing.Point(208, 24);
+            this.VerbindungenLabel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.VerbindungenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VerbindungenLabel.Location = new System.Drawing.Point(103, 9);
             this.VerbindungenLabel.Name = "VerbindungenLabel";
-            this.VerbindungenLabel.Size = new System.Drawing.Size(109, 20);
+            this.VerbindungenLabel.Size = new System.Drawing.Size(229, 37);
             this.VerbindungenLabel.TabIndex = 0;
             this.VerbindungenLabel.Text = "Verbindungen";
             this.VerbindungenLabel.Click += new System.EventHandler(this.VerbindungenLabel_Click);
             // 
-            // abfahrtLabel
+            // dauerListBox
             // 
-            this.abfahrtLabel.AutoSize = true;
-            this.abfahrtLabel.Location = new System.Drawing.Point(46, 62);
-            this.abfahrtLabel.Name = "abfahrtLabel";
-            this.abfahrtLabel.Size = new System.Drawing.Size(66, 20);
-            this.abfahrtLabel.TabIndex = 1;
-            this.abfahrtLabel.Text = "Abfahrt:";
+            this.dauerListBox.FormattingEnabled = true;
+            this.dauerListBox.ItemHeight = 20;
+            this.dauerListBox.Location = new System.Drawing.Point(394, 88);
+            this.dauerListBox.Name = "dauerListBox";
+            this.dauerListBox.Size = new System.Drawing.Size(88, 84);
+            this.dauerListBox.TabIndex = 7;
+            this.dauerListBox.SelectedIndexChanged += new System.EventHandler(this.verbindungListBox_SelectedIndexChanged);
             // 
-            // ankunftLabel
+            // zeitspannenListBox
             // 
-            this.ankunftLabel.AutoSize = true;
-            this.ankunftLabel.Location = new System.Drawing.Point(220, 62);
-            this.ankunftLabel.Name = "ankunftLabel";
-            this.ankunftLabel.Size = new System.Drawing.Size(69, 20);
-            this.ankunftLabel.TabIndex = 2;
-            this.ankunftLabel.Text = "Ankunft:";
+            this.zeitspannenListBox.FormattingEnabled = true;
+            this.zeitspannenListBox.ItemHeight = 20;
+            this.zeitspannenListBox.Location = new System.Drawing.Point(12, 88);
+            this.zeitspannenListBox.Name = "zeitspannenListBox";
+            this.zeitspannenListBox.Size = new System.Drawing.Size(157, 84);
+            this.zeitspannenListBox.TabIndex = 8;
+            // 
+            // zeitspannenLabel
+            // 
+            this.zeitspannenLabel.AutoSize = true;
+            this.zeitspannenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zeitspannenLabel.Location = new System.Drawing.Point(12, 59);
+            this.zeitspannenLabel.Name = "zeitspannenLabel";
+            this.zeitspannenLabel.Size = new System.Drawing.Size(136, 26);
+            this.zeitspannenLabel.TabIndex = 9;
+            this.zeitspannenLabel.Text = "Zeitspanne:";
             // 
             // dauerLabel
             // 
             this.dauerLabel.AutoSize = true;
-            this.dauerLabel.Location = new System.Drawing.Point(384, 62);
+            this.dauerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dauerLabel.Location = new System.Drawing.Point(389, 59);
             this.dauerLabel.Name = "dauerLabel";
-            this.dauerLabel.Size = new System.Drawing.Size(57, 20);
-            this.dauerLabel.TabIndex = 3;
+            this.dauerLabel.Size = new System.Drawing.Size(83, 26);
+            this.dauerLabel.TabIndex = 10;
             this.dauerLabel.Text = "Dauer:";
             // 
-            // abfahrtTextBox
+            // label1
             // 
-            this.abfahrtTextBox.Location = new System.Drawing.Point(27, 85);
-            this.abfahrtTextBox.Name = "abfahrtTextBox";
-            this.abfahrtTextBox.Size = new System.Drawing.Size(100, 26);
-            this.abfahrtTextBox.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(205, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Bus/Zug Nr:";
             // 
-            // ankunftTextBox
+            // nummerListBox
             // 
-            this.ankunftTextBox.Location = new System.Drawing.Point(202, 85);
-            this.ankunftTextBox.Name = "ankunftTextBox";
-            this.ankunftTextBox.Size = new System.Drawing.Size(100, 26);
-            this.ankunftTextBox.TabIndex = 5;
-            // 
-            // dauerTextBox
-            // 
-            this.dauerTextBox.Location = new System.Drawing.Point(366, 85);
-            this.dauerTextBox.Name = "dauerTextBox";
-            this.dauerTextBox.Size = new System.Drawing.Size(100, 26);
-            this.dauerTextBox.TabIndex = 6;
-            // 
-            // verbindungListBox
-            // 
-            this.verbindungListBox.FormattingEnabled = true;
-            this.verbindungListBox.ItemHeight = 20;
-            this.verbindungListBox.Location = new System.Drawing.Point(169, 148);
-            this.verbindungListBox.Name = "verbindungListBox";
-            this.verbindungListBox.Size = new System.Drawing.Size(241, 84);
-            this.verbindungListBox.TabIndex = 7;
-            this.verbindungListBox.SelectedIndexChanged += new System.EventHandler(this.verbindungListBox_SelectedIndexChanged);
+            this.nummerListBox.FormattingEnabled = true;
+            this.nummerListBox.ItemHeight = 20;
+            this.nummerListBox.Location = new System.Drawing.Point(209, 88);
+            this.nummerListBox.Name = "nummerListBox";
+            this.nummerListBox.Size = new System.Drawing.Size(135, 84);
+            this.nummerListBox.TabIndex = 12;
+            this.nummerListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // verbindungsplan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 264);
-            this.Controls.Add(this.verbindungListBox);
-            this.Controls.Add(this.dauerTextBox);
-            this.Controls.Add(this.ankunftTextBox);
-            this.Controls.Add(this.abfahrtTextBox);
+            this.ClientSize = new System.Drawing.Size(495, 179);
+            this.Controls.Add(this.nummerListBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dauerLabel);
-            this.Controls.Add(this.ankunftLabel);
-            this.Controls.Add(this.abfahrtLabel);
+            this.Controls.Add(this.zeitspannenLabel);
+            this.Controls.Add(this.zeitspannenListBox);
+            this.Controls.Add(this.dauerListBox);
             this.Controls.Add(this.VerbindungenLabel);
             this.Name = "verbindungsplan";
             this.Text = "verbindungsplan";
+            this.Load += new System.EventHandler(this.verbindungsplan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,12 +131,11 @@
         #endregion
 
         private System.Windows.Forms.Label VerbindungenLabel;
-        private System.Windows.Forms.Label abfahrtLabel;
-        private System.Windows.Forms.Label ankunftLabel;
+        private System.Windows.Forms.ListBox dauerListBox;
+        private System.Windows.Forms.ListBox zeitspannenListBox;
+        private System.Windows.Forms.Label zeitspannenLabel;
         private System.Windows.Forms.Label dauerLabel;
-        private System.Windows.Forms.TextBox abfahrtTextBox;
-        private System.Windows.Forms.TextBox ankunftTextBox;
-        private System.Windows.Forms.TextBox dauerTextBox;
-        private System.Windows.Forms.ListBox verbindungListBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox nummerListBox;
     }
 }
