@@ -191,7 +191,6 @@
             this.uhrzeitBox.Name = "uhrzeitBox";
             this.uhrzeitBox.Size = new System.Drawing.Size(254, 26);
             this.uhrzeitBox.TabIndex = 19;
-            this.uhrzeitBox.Text = "12:12";
             // 
             // stationGroupBox
             // 
@@ -260,6 +259,7 @@
             this.Controls.Add(this.stationGroupBox);
             this.Name = "fahrplanForm";
             this.Text = "ÖV-Plan";
+            this.Load += new System.EventHandler(this.fahrplanForm_Load);
             this.stationGroupBox.ResumeLayout(false);
             this.stationGroupBox.PerformLayout();
             this.verbindungGroupBox.ResumeLayout(false);

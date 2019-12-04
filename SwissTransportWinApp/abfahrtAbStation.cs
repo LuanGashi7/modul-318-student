@@ -25,6 +25,7 @@ namespace SwissTransportWinApp
         */
         private void abfahrtAbStation_Load(object sender, EventArgs e)
         {
+            
             StationBoardRoot verbindungen;
             try {
                 verbindungen = transport.GetStationBoard(station, "");

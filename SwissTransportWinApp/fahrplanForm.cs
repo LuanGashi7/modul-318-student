@@ -20,16 +20,19 @@ namespace SwissTransportWinApp
         {
             InitializeComponent();
         }
-         Transport transport = new Transport();
+         Transport transport = new Transport();      
         /*
          * leitet mit einer überprüfung zum Verbindungsplan Form weiter
          */
         private void suchtVerbindungBttn_Click(object sender, EventArgs e)
         {
                 verbindungsplan meinVerbindungsplan = new verbindungsplan();
-            if (vonTextBox.Text == String.Empty || nachTextBox.Text == String.Empty || uhrzeitBox.Text == String.Empty)
+            if (vonTextBox.Text == String.Empty || nachTextBox.Text == String.Empty || uhrzeitBox.Text == String.Empty || transport.GetStations(vonTextBox.Text).StationList.Count <= 0 || transport.GetStations(nachTextBox.Text).StationList.Count <= 0)
             {
-                MessageBox.Show("Bitte füllen sie alle Felder korrekt aus.");
+                uhrzeitBox.Text = "";
+                vonTextBox.Text = "";
+                nachTextBox.Text = "";
+                MessageBox.Show("Bitte geben sie gültige Werte ein.");
             }
             else
             {
@@ -57,7 +60,7 @@ namespace SwissTransportWinApp
                 }
                 catch
                 {
-                    MessageBox.Show("Geben sie ein gültigen Abfahrtsort an.");
+                  
                 }
                 }
         }
@@ -78,7 +81,7 @@ namespace SwissTransportWinApp
                 }
                 catch
                 {
-                    MessageBox.Show("Geben sie ein gültigen Zielort an.");
+                   
                 }
             }
         }
@@ -88,9 +91,10 @@ namespace SwissTransportWinApp
         private void verbindungAnzBttn_Click(object sender, EventArgs e)
         {
 
-            if (stationTextBox.Text == string.Empty)
+            if (stationTextBox.Text == string.Empty || transport.GetStations(stationTextBox.Text).StationList.Count <= 0)
             {
-                MessageBox.Show("Bitte füllen sie alle Felder korrekt aus.");
+                stationTextBox.Text = "";
+                MessageBox.Show("Bitte geben sie gültige Werte ein.");
             }
             else {
                 abfahrtAbStation meineAbfahrtAbStation = new abfahrtAbStation();
@@ -114,7 +118,7 @@ namespace SwissTransportWinApp
                     stationListBox.Items.Add(stations[i].Name);
                 }
                 catch {
-                    MessageBox.Show("Geben sie eine gültige Station ein");
+                    
                 }
             }
         }
@@ -135,6 +139,17 @@ namespace SwissTransportWinApp
         {
             stationTextBox.Text = Convert.ToString(stationListBox.SelectedItem);
             stationListBox.Items.Clear();
+        }
+
+        private void fahrplanForm_Load(object sender, EventArgs e)
+        {
+            if (uhrzeitBox.Text == "") {
+                uhrzeitBox.Text = DateTime.Now.ToString().Substring(11, 5);
+            }
+            else
+            {
+
+            } 
         }
     }
 }
