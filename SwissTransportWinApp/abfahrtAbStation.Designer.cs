@@ -56,7 +56,6 @@
             this.stationTimeBoardListBox.Name = "stationTimeBoardListBox";
             this.stationTimeBoardListBox.Size = new System.Drawing.Size(110, 104);
             this.stationTimeBoardListBox.TabIndex = 1;
-            this.stationTimeBoardListBox.SelectedIndexChanged += new System.EventHandler(this.stationBoardListBox_SelectedIndexChanged);
             // 
             // richtungLabel
             // 
@@ -77,7 +76,6 @@
             this.zeitLabel.Size = new System.Drawing.Size(59, 26);
             this.zeitLabel.TabIndex = 3;
             this.zeitLabel.Text = "Zeit:";
-            this.zeitLabel.Click += new System.EventHandler(this.zeitLabel_Click);
             // 
             // richtungListBox
             // 

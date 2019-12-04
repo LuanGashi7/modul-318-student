@@ -43,8 +43,8 @@
             this.uhrzeitLabel = new System.Windows.Forms.Label();
             this.uhrzeitBox = new System.Windows.Forms.TextBox();
             this.stationGroupBox = new System.Windows.Forms.GroupBox();
-            this.verbindungGroupBox = new System.Windows.Forms.GroupBox();
             this.stationListBox = new System.Windows.Forms.ListBox();
+            this.verbindungGroupBox = new System.Windows.Forms.GroupBox();
             this.fahrplanLabel = new System.Windows.Forms.Label();
             this.stationGroupBox.SuspendLayout();
             this.verbindungGroupBox.SuspendLayout();
@@ -59,7 +59,6 @@
             this.vonLabel.Size = new System.Drawing.Size(42, 20);
             this.vonLabel.TabIndex = 0;
             this.vonLabel.Text = "Von:";
-            this.vonLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // nachLabel
             // 
@@ -142,7 +141,6 @@
             this.vonStationlistBox.Name = "vonStationlistBox";
             this.vonStationlistBox.Size = new System.Drawing.Size(254, 124);
             this.vonStationlistBox.TabIndex = 13;
-            this.vonStationlistBox.SelectedIndexChanged += new System.EventHandler(this.vonStationlistBox_SelectedIndexChanged);
             this.vonStationlistBox.DoubleClick += new System.EventHandler(this.vonStationlistBox_DoubleClick);
             // 
             // nachStationlistBox
@@ -154,7 +152,6 @@
             this.nachStationlistBox.Name = "nachStationlistBox";
             this.nachStationlistBox.Size = new System.Drawing.Size(246, 124);
             this.nachStationlistBox.TabIndex = 14;
-            this.nachStationlistBox.SelectedIndexChanged += new System.EventHandler(this.nachStationlistBox_SelectedIndexChanged);
             this.nachStationlistBox.DoubleClick += new System.EventHandler(this.nachStationlistBox_DoubleClick);
             // 
             // datumBox
@@ -164,7 +161,7 @@
             this.datumBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datumBox.Location = new System.Drawing.Point(315, 257);
             this.datumBox.Name = "datumBox";
-            this.datumBox.Size = new System.Drawing.Size(200, 26);
+            this.datumBox.Size = new System.Drawing.Size(246, 26);
             this.datumBox.TabIndex = 15;
             // 
             // datumLabel
@@ -192,8 +189,9 @@
             this.uhrzeitBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.uhrzeitBox.Location = new System.Drawing.Point(10, 257);
             this.uhrzeitBox.Name = "uhrzeitBox";
-            this.uhrzeitBox.Size = new System.Drawing.Size(200, 26);
+            this.uhrzeitBox.Size = new System.Drawing.Size(254, 26);
             this.uhrzeitBox.TabIndex = 19;
+            this.uhrzeitBox.Text = "12:12";
             // 
             // stationGroupBox
             // 
@@ -208,6 +206,17 @@
             this.stationGroupBox.TabIndex = 20;
             this.stationGroupBox.TabStop = false;
             this.stationGroupBox.Text = "Stationen:";
+            // 
+            // stationListBox
+            // 
+            this.stationListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stationListBox.FormattingEnabled = true;
+            this.stationListBox.ItemHeight = 20;
+            this.stationListBox.Location = new System.Drawing.Point(20, 84);
+            this.stationListBox.Name = "stationListBox";
+            this.stationListBox.Size = new System.Drawing.Size(254, 124);
+            this.stationListBox.TabIndex = 12;
+            this.stationListBox.DoubleClick += new System.EventHandler(this.stationListBox_DoubleClick);
             // 
             // verbindungGroupBox
             // 
@@ -229,17 +238,6 @@
             this.verbindungGroupBox.TabIndex = 21;
             this.verbindungGroupBox.TabStop = false;
             this.verbindungGroupBox.Text = "Verbindungen:";
-            // 
-            // stationListBox
-            // 
-            this.stationListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stationListBox.FormattingEnabled = true;
-            this.stationListBox.ItemHeight = 20;
-            this.stationListBox.Location = new System.Drawing.Point(20, 84);
-            this.stationListBox.Name = "stationListBox";
-            this.stationListBox.Size = new System.Drawing.Size(254, 124);
-            this.stationListBox.TabIndex = 12;
-            this.stationListBox.DoubleClick += new System.EventHandler(this.stationListBox_DoubleClick);
             // 
             // fahrplanLabel
             // 

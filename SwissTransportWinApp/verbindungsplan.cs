@@ -23,38 +23,35 @@ namespace SwissTransportWinApp
             InitializeComponent();
         }
         Transport transport = new Transport();
-        private void VerbindungenLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void verbindungListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /*
+        * Zeigt den Verbindungsplan mit den Infos wie Zeitspanne, Bus/Zug Nummer und Dauer an.
+        */
         private void verbindungsplan_Load(object sender, EventArgs e)
         {
-            var connections = transport.GetConnections(startStation, endStation, datum, uhrzeit);
-            var verbindungen = transport.GetStationBoard(startStation, "");
-            for (int i = 0; i < connections.ConnectionList.Count; i++)
+            Connections connections;
+            StationBoardRoot verbindungen;
+
+            try
             {
-                //if (connections.ConnectionList.Contains(startStation)) { }
-                string zeitspanne = connections.ConnectionList[i].From.Departure.Remove(0, 11).Remove(5, 8) + " -> " + connections.ConnectionList[i].To.Arrival.Remove(0, 11).Remove(5, 8);
-                zeitspannenListBox.Items.Add(zeitspanne);
+                connections = transport.GetConnections(startStation, endStation, datum, uhrzeit);
+                verbindungen = transport.GetStationBoard(startStation, "");
 
-                string nummerVerbindung = verbindungen.Entries[1].Category + " " + verbindungen.Entries[i].Number;
-                nummerListBox.Items.Add(nummerVerbindung);
+                for (int i = 0; i < connections.ConnectionList.Count; i++)
+                {
+                    string zeitspanne = connections.ConnectionList[i].From.Departure.Remove(0, 11).Remove(5, 8) + " -> " + connections.ConnectionList[i].To.Arrival.Remove(0, 11).Remove(5, 8);
+                    zeitspannenListBox.Items.Add(zeitspanne);
 
-                string connection = connections.ConnectionList[i].Duration.Remove(0, 3).Remove(5, 3) + " min";
-                dauerListBox.Items.Add(connection);
-           // }
-        }
-        }
+                    string nummerVerbindung = verbindungen.Entries[1].Category + " " + verbindungen.Entries[i].Number;
+                    nummerListBox.Items.Add(nummerVerbindung);
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+                    string connection = connections.ConnectionList[i].Duration.Remove(0, 3).Remove(5, 3) + " min";
+                    dauerListBox.Items.Add(connection);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ihre Eingaben sind ungültig.");
+            } 
         }
     }
 }

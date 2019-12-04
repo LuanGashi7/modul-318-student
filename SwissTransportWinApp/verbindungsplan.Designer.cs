@@ -47,7 +47,6 @@
             this.VerbindungenLabel.Size = new System.Drawing.Size(229, 37);
             this.VerbindungenLabel.TabIndex = 0;
             this.VerbindungenLabel.Text = "Verbindungen";
-            this.VerbindungenLabel.Click += new System.EventHandler(this.VerbindungenLabel_Click);
             // 
             // dauerListBox
             // 
@@ -57,7 +56,6 @@
             this.dauerListBox.Name = "dauerListBox";
             this.dauerListBox.Size = new System.Drawing.Size(88, 84);
             this.dauerListBox.TabIndex = 7;
-            this.dauerListBox.SelectedIndexChanged += new System.EventHandler(this.verbindungListBox_SelectedIndexChanged);
             // 
             // zeitspannenListBox
             // 
@@ -106,7 +104,6 @@
             this.nummerListBox.Name = "nummerListBox";
             this.nummerListBox.Size = new System.Drawing.Size(135, 84);
             this.nummerListBox.TabIndex = 12;
-            this.nummerListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // verbindungsplan
             // 

@@ -20,30 +20,29 @@ namespace SwissTransportWinApp
             InitializeComponent();
         }
         Transport transport = new Transport();
-        private void stationBoardListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /*
+        * Zeigt den Abfahrtsplan mit den Infos wie Abfahrtszeit, Bus/Zug Nummer und Richtung an.
+        */
         private void abfahrtAbStation_Load(object sender, EventArgs e)
         {
-            var verbindungen = transport.GetStationBoard(station, "");
-            for (int i = 0; i < 5; i++)
-            {
-                string zeitVerbindung = verbindungen.Entries[i].Stop.Departure.TimeOfDay + "";
-                stationTimeBoardListBox.Items.Add(zeitVerbindung);
+            StationBoardRoot verbindungen;
+            try {
+                verbindungen = transport.GetStationBoard(station, "");
+                for (int i = 0; i < 5; i++)
+                {
+                    string zeitVerbindung = verbindungen.Entries[i].Stop.Departure.TimeOfDay + "";
+                    stationTimeBoardListBox.Items.Add(zeitVerbindung);
 
-                string nummerVerbindung = verbindungen.Entries[i].Category + " " + verbindungen.Entries[i].Number;
-                nummerListBox.Items.Add(nummerVerbindung);
+                    string nummerVerbindung = verbindungen.Entries[i].Category + " " + verbindungen.Entries[i].Number;
+                    nummerListBox.Items.Add(nummerVerbindung);
 
-                string richtungVerbindung = verbindungen.Entries[i].To;
-                richtungListBox.Items.Add(richtungVerbindung);
+                    string richtungVerbindung = verbindungen.Entries[i].To;
+                    richtungListBox.Items.Add(richtungVerbindung);
+                }
             }
-        }
-
-        private void zeitLabel_Click(object sender, EventArgs e)
-        {
-
+            catch { 
+            MessageBox.Show("Ihre Eingabe ist ungültig.");
+            }
         }
     }
 }
